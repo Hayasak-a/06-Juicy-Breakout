@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Win.gd" type="Script" id=1]
+[ext_resource path="res://Outwest-Light.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_color = Color( 0.247059, 0.964706, 0.0980392, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Win" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,12 +16,15 @@ margin_left = 232.0
 margin_top = 168.0
 margin_right = 792.0
 margin_bottom = 392.0
-color = Color( 0.0941176, 0.392157, 0.670588, 1 )
+color = Color( 0.611765, 0.298039, 0.768627, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_top = 208.0
-margin_right = 1024.0
-margin_bottom = 344.0
+margin_left = 2.0
+margin_top = 207.0
+margin_right = 1026.0
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.972549, 0.0980392, 1 )
 text = "You win!"
 align = 1
 

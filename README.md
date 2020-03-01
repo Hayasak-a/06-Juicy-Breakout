@@ -4,29 +4,23 @@ This is an opportunity for you to implement some of the "juicy" features as demo
 
 I have provided a simple, generic brick breaker game, built in Godot. You can use the presentation as a guide or use your own imagination, but your assignment is to make the game feel more "juicy": kinetic, reactive, physical.
 
-Please list the features you add in the README.md. You will be awarded one point per feature you add (including a soundtrack and sound effects). Some of the features demonstrated in the presentation include:
- - Changing the color of the paddle, ball, and blocks
- - Animate how the blocks and the paddle appear on the screen
- - Squeeze and stretch the paddle
- - Animate the size of the ball when it hits something
- - Wobble the ball after it hits something
- - Animate the color of the ball after it hits something
- - Shake the blocks or the paddle when the ball hits something
- - Add sound effects
- - Add music
- - Add particles when a block is hit
- - Add particles when the paddle is hit
- - Make the blocks fall off the screen when they are hit
- - Make the blocks rotate as they are hit
- - Break the blocks when they are hit
- - Add a comet trail to the ball
- - Add screen shake
- - Add eyes to the paddle
- - Make the eyes blink
- - Make the eyes follow the ball
- - Add a smile to the paddle and animate it based on the location of the ball
- - Add a background to the game
- - etc.
+Features implemented:
+1. Tiles have a random color for each run of the game
+2. Paddle changes to ball's color when hit; ball's color changes to random color when hits a tile
+3. Ball rotates
+4. Blocks fall when hit; don't just disappear
+5. Paddle changes to ball's color when hit 
+6. Ball increases speed on tile hits
+7. "Pause" superpower helps on nigh impossible speeds: once per life, click to pause game for one second
+8. "You win" and "Game Over" text no longer look godawful; new font/color/size/rectangle color
+9. Music
+10. 
+11.
+12.
+13.
+14.
+15.
+16.
 
  When you are done, *update the LICENSE and README.md*, commit and push your code to GitHub, and turn in the URL for your repository on Canvas.
 

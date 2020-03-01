@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/League of Legends_ _Katarina_ (Original song _ English).ogg-d64ed650fd2195506516140252aa1fb1.oggstr"
+
+[deps]
+
+source_file="res://League of Legends_ _Katarina_ (Original song _ English).ogg"
+dest_files=[ "res://.import/League of Legends_ _Katarina_ (Original song _ English).ogg-d64ed650fd2195506516140252aa1fb1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
