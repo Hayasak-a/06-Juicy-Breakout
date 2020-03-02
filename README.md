@@ -14,10 +14,10 @@ Features implemented:
 7. "Pause" superpower helps on nigh impossible speeds: once per life, click to pause game for one second
 8. "You win" and "Game Over" text no longer look godawful; new font/color/size/rectangle color
 9. Music
-10. 
-11.
-12.
-13.
+10. Velocity increases in direction of the side of the paddle that it hit
+11. Tile color quickly fades as it falls
+12. Colors gradually get closer to white over time; color returns when hit
+13. 
 14.
 15.
 16.
