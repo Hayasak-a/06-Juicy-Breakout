@@ -1,15 +1,33 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Paddle.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Score.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Lives.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/Starting.gd" type="Script" id=6]
-[ext_resource path="res://League of Legends_ _Katarina_ (Original song _ English).ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Particles2D.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Wall.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Lives.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Starting.gd" type="Script" id=8]
+[ext_resource path="res://League of Legends_ _Katarina_ (Original song _ English).ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 16 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 40, 5, 100 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 34.48
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.29
+angle = 720.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 1.0
+hue_variation = 0.05
+hue_variation_random = 1.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -34,7 +52,13 @@ margin_bottom = 16.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
 shape = SubResource( 1 )
 
+[node name="Particles2D" type="Particles2D" parent="Paddle"]
+amount = 16
+process_material = SubResource( 2 )
+script = ExtResource( 3 )
+
 [node name="Wall" type="StaticBody2D" parent="."]
+script = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PoolVector2Array( 0, 632, 0, 0, 1024, 0, 1024, 632, 1064, 632, 1064, -40, -48, -40, -48, 632 )
@@ -43,162 +67,162 @@ polygon = PoolVector2Array( 0, 632, 0, 0, 1024, 0, 1024, 632, 1064, 632, 1064, -
 
 [node name="Tile Row 1" type="Node2D" parent="Tiles"]
 
-[node name="Tile" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 184, 296 )
 
-[node name="Tile2" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile2" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 256, 296 )
 
-[node name="Tile3" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile3" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 328, 296 )
 
-[node name="Tile4" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile4" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 400, 296 )
 
-[node name="Tile5" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile5" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 472, 296 )
 
-[node name="Tile6" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile6" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 544, 296 )
 
-[node name="Tile7" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile7" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 616, 296 )
 
-[node name="Tile8" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile8" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 688, 296 )
 
-[node name="Tile9" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile9" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 760, 296 )
 
-[node name="Tile10" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
+[node name="Tile10" parent="Tiles/Tile Row 1" instance=ExtResource( 5 )]
 position = Vector2( 832, 296 )
 
 [node name="Tile Row 2" type="Node2D" parent="Tiles"]
 
-[node name="Tile" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 184, 256 )
 
-[node name="Tile2" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile2" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 256, 256 )
 
-[node name="Tile3" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile3" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 328, 256 )
 
-[node name="Tile4" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile4" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 400, 256 )
 
-[node name="Tile5" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile5" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 472, 256 )
 
-[node name="Tile6" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile6" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 544, 256 )
 
-[node name="Tile7" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile7" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 616, 256 )
 
-[node name="Tile8" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile8" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 688, 256 )
 
-[node name="Tile9" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile9" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 760, 256 )
 
-[node name="Tile10" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
+[node name="Tile10" parent="Tiles/Tile Row 2" instance=ExtResource( 5 )]
 position = Vector2( 832, 256 )
 
 [node name="Tile Row 3" type="Node2D" parent="Tiles"]
 
-[node name="Tile" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 184, 216 )
 
-[node name="Tile2" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile2" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 256, 216 )
 
-[node name="Tile3" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile3" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 328, 216 )
 
-[node name="Tile4" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile4" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 400, 216 )
 
-[node name="Tile5" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile5" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 472, 216 )
 
-[node name="Tile6" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile6" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 544, 216 )
 
-[node name="Tile7" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile7" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 616, 216 )
 
-[node name="Tile8" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile8" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 688, 216 )
 
-[node name="Tile9" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile9" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 760, 216 )
 
-[node name="Tile10" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
+[node name="Tile10" parent="Tiles/Tile Row 3" instance=ExtResource( 5 )]
 position = Vector2( 832, 216 )
 
 [node name="Tile Row 4" type="Node2D" parent="Tiles"]
 
-[node name="Tile" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 184, 176 )
 
-[node name="Tile2" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile2" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 256, 176 )
 
-[node name="Tile3" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile3" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 328, 176 )
 
-[node name="Tile4" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile4" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 400, 176 )
 
-[node name="Tile5" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile5" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 472, 176 )
 
-[node name="Tile6" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile6" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 544, 176 )
 
-[node name="Tile7" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile7" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 616, 176 )
 
-[node name="Tile8" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile8" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 688, 176 )
 
-[node name="Tile9" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile9" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 760, 176 )
 
-[node name="Tile10" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
+[node name="Tile10" parent="Tiles/Tile Row 4" instance=ExtResource( 5 )]
 position = Vector2( 832, 176 )
 
 [node name="Tile Row 5" type="Node2D" parent="Tiles"]
 
-[node name="Tile" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 184, 136 )
 
-[node name="Tile2" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile2" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 256, 136 )
 
-[node name="Tile3" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile3" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 328, 136 )
 
-[node name="Tile4" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile4" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 400, 136 )
 
-[node name="Tile5" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile5" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 472, 136 )
 
-[node name="Tile6" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile6" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 544, 136 )
 
-[node name="Tile7" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile7" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 616, 136 )
 
-[node name="Tile8" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile8" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 688, 136 )
 
-[node name="Tile9" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile9" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 760, 136 )
 
-[node name="Tile10" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
+[node name="Tile10" parent="Tiles/Tile Row 5" instance=ExtResource( 5 )]
 position = Vector2( 832, 136 )
 
 [node name="Score" type="Label" parent="."]
@@ -207,7 +231,7 @@ margin_top = 16.0
 margin_right = 112.0
 margin_bottom = 30.0
 text = "Score: "
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="Lives" type="Label" parent="."]
 margin_left = 952.0
@@ -215,19 +239,19 @@ margin_top = 16.0
 margin_right = 1006.0
 margin_bottom = 30.0
 text = "Lives:"
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="Starting" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 112.0
 align = 1
 valign = 1
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="Starting"]
 wait_time = 10.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 autoplay = true
 [connection signal="timeout" from="Starting/Timer" to="Starting" method="_on_Timer_timeout"]

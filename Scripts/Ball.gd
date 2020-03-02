@@ -12,6 +12,7 @@ func _ready():
 	contact_monitor = true
 	set_max_contacts_reported(4)
 	prev_pos = position
+	add_to_group("Ball")
 
 func _physics_process(delta):
 	# Check for collisions
@@ -33,6 +34,8 @@ func _physics_process(delta):
 		Game.change_lives(-1)
 		Starting.startCountdown(3)
 		queue_free()
+	if position.x > get_viewport().size.x || position.x < 0:
+		linear_velocity.x = -linear_velocity.x
 	
 	rot += 2 * delta
 	rotation += rot

@@ -17,10 +17,10 @@ Features implemented:
 10. Velocity increases in direction of the side of the paddle that it hit
 11. Tile color quickly fades as it falls
 12. Colors gradually get closer to white over time; color returns when hit
-13. 
-14.
-15.
-16.
+13. On last life, tiles begin to slowly rotate
+14. Ball has colorful particle stream around it
+15. Paddle has colorful particles streaming above it
+16. Colorful particles above paddle follow ball
 
  When you are done, *update the LICENSE and README.md*, commit and push your code to GitHub, and turn in the URL for your repository on Canvas.
 

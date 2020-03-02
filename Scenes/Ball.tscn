@@ -10,11 +10,14 @@ bounce = 1.0
 extents = Vector2( 8, 8 )
 
 [sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 27.51
 flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-angular_velocity = 0.0
+gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+hue_variation = 0.04
+hue_variation_random = 1.0
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 544, 488 )
@@ -39,4 +42,5 @@ margin_bottom = 8.0
 shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+amount = 80
 process_material = SubResource( 3 )

@@ -29,6 +29,10 @@ func change_lives(l):
 	$Lives.update_lives(lives)
 	can_pause = true
 	#if there are no more lives show the game over screen
+	if lives == 1:
+		var tiles = get_tree().get_nodes_in_group("Tiles")
+		for tile in tiles:
+			tile.rota = true
 	if lives <= 0:
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 

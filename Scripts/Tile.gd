@@ -6,6 +6,7 @@ var color
 var falling = false
 var rot = 0
 var fullness = 1
+var rota = false
 
 func _ready():
 	set_modulate(Color(1-pow(randf(),2),1-pow(randf(), 2), 1-pow(randf(), 2), 1))
@@ -17,6 +18,8 @@ func fall():
 	
 	
 func _physics_process(delta):
+	if(rota == true):
+		rotation+=0.5*delta
 	if(falling == true):
 		position.y += 1000*delta
 		rot+=4*delta
@@ -24,5 +27,5 @@ func _physics_process(delta):
 		fullness -= delta
 		set_modulate(Color(color.r*fullness, color.g*fullness, color.b*fullness, 1))
 	else:
-		fullness += 0.03 * delta
+		fullness += 0.02 * delta
 		set_modulate(Color(color.r*fullness, color.g*fullness, color.b*fullness, 1))
